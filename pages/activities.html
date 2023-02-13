@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Sean Fuhrman's Personal Website</title>
+        <meta name="description" content="Sean Fuhrman's Personal Website"/>
+        <link rel="icon" href="/favicon.ico"/>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/pages/about.html">About</a></li>
+                    <li><a href="/pages/projects.html">Projects</a></li>
+                    <li><a href="/pages/experience.html">Experience</a></li>
+                    <li><a href="/pages/activities.html">Activities</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <canvas>
+            </canvas>
+            <template>
+                <p>This will not get displayed</p>
+            </template>
+            <details>
+                <summary>This is the summary</summary>
+                and these are the details 0.0
+            </details>
+            <aside>
+                go back to the main content! why are you reading an aside
+            </aside>
+            <code>grade == A? happy = true : happy = false</code>
+            <pre>Indents
+                Indents
+                Oh My!
+            </pre>
+            <p>Iframes:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aRGdDy18qfY" title="YouTube video player" ></iframe>
+            <br/>
+            <label for="selector">choose ur favorite pet</label>
+            <select name="selector">
+                <optgroup label="common">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </optgroup>
+                <optgroup label="uncommon">
+                    <option value="giraffe">Dog</option>
+                    <option value="lion">Cat</option>
+                </optgroup>
+            </select>
+            <div>
+                <p>Write your story!</p>
+                <textarea></textarea>
+            </div>
+            <video controls>
+                <source src="/assets/video.mov" type="video/mp4">
+            </video> 
+            <audio controls>
+                <source src="/assets/audio.m4a">
+            </audio>
+        </main>
+    </body>
+</html>
+
+<script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'black';
+    ctx.fillRect(10, 10, 100, 100);
+</script>

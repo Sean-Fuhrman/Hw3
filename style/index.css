@@ -3,7 +3,7 @@
     font-family: 'Andale Mono','Courier New', Courier, monospace;
     --background-color: black;
     --primary-color: white;
-    --highlight-color: white;
+    --highlight-color: #FF00FF;
     --link-color : lightblue;
     margin : 0;
     padding: 0;
@@ -23,6 +23,7 @@ nav ul {
 }
 
 nav {
+    width : 100vw;
     background-color: var(--background-color);
     display: flex;
     justify-content: space-between;
@@ -103,7 +104,6 @@ main {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    
 }
 
 #intro {
@@ -128,7 +128,7 @@ main {
 #hiText {
     font-family: 'Courier New', Courier, monospace;
     font-weight : 100;
-    font-size : 0.8rem;
+    font-size : min(2vh, 4vw);
     text-align: center;
     color: var(--primary-color);
 }
@@ -137,7 +137,7 @@ main {
     /* height: 4rem;  */
     padding: 5px;
     margin: auto;
-    font-size : 4vh;
+    font-size : min(6vh, 8vw);
     font-weight: normal;
     flex-wrap: wrap;
     justify-content: center;
@@ -162,8 +162,22 @@ footer {
     bottom : 0;
     width: 100%;
     position: absolute;
+    background-color: var(--background-color);
+    padding: 0.3rem 0.;
 }
 
 footer a{
     color : var(--link-color);
+    
 }
+
+@keyframes background-slide {
+    from {background-position: 0px 0px;}
+    to {background-position: 0px -4000px;}
+}
+
+body {
+    background: var(--background-color) url('/assets/stars.png') repeat top center;
+    background-size: auto 1000px;
+    animation: background-slide 200s linear infinite;
+  }

@@ -1,0 +1,150 @@
+* {
+    /* border: 1px dashed red; */
+    --background-color: black;
+    --primary-color: white;
+    --highlight-color: #FF00C8;
+    --link-color : lightblue;
+    margin : 0;
+    padding: 0;
+} 
+
+nav ul {
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+@media (max-width : 600px) {
+    nav ul {
+        justify-content: space-around;
+    }
+}
+
+nav {
+    width: 100vw;
+    font-family: 'Andale Mono','Courier New', Courier, monospace;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+@media (max-width: 650px) {
+    nav {
+        justify-content: space-around;
+    }
+}
+
+nav li a {
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 0.3rem;
+    margin : 0.3rem 0.2rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav a {
+    border-bottom: 2px solid transparent;
+}
+nav div svg {
+    color: var(--primary-color);
+}
+
+
+nav a:hover svg {
+    animation: turn45 0.3s 1 forwards;
+}
+
+nav  a:hover {
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+nav a:active { 
+    background-color: rgba(255, 0, 200, 0.6);
+}
+
+
+@keyframes turn45 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes blink {
+    0%{
+        color: transparent;
+    }
+    50%{
+        color: var(--primary-color);
+    }
+    100%{
+        color: transparent;
+    }
+}
+
+#socials {
+    display: flex;
+    justify-content: flex-start;
+    padding: 6px 16px;
+}
+
+#socials * {
+    width: min(5vw, 30px);
+}
+
+@keyframes background-slide {
+    from {background-position: 0px 0px;}
+    to {background-position: 0px -4000px;}
+}
+
+body {
+    background: var(--background-color) url('/assets/stars.png') repeat top center;
+    background-size: auto 1000px;
+    animation: background-slide 200s linear infinite;
+    color: var(--primary-color);
+}
+
+.imageLink {
+    text-decoration: none;
+    color: transparent;
+}
+
+main {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+section {
+    width: 90vw;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+h3, time {
+    margin-top: 10px;
+    margin-bottom : 10px;
+}
+
+#work {
+    margin-top: 20px;
+}
+
+time {
+    display: inline;
+    float: right;
+    font-style: italic;
+}
+
+#education ul {
+    list-style: none;
+}

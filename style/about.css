@@ -2,7 +2,7 @@
     /* border: 1px dashed red; */
     --background-color: black;
     --primary-color: white;
-    --highlight-color: #FF00FF;
+    --highlight-color: #FF00C8;
     --link-color : lightblue;
     margin : 0;
     padding: 0;
@@ -41,24 +41,30 @@ nav li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid transparent;
     padding: 0.2rem 0.3rem;
     margin : 0.3rem 0.2rem;
     text-align: center;
     text-decoration: none;
 }
 
+nav a {
+    border-bottom: 2px solid transparent;
+}
 nav div svg {
     color: var(--primary-color);
 }
 
 
-nav li a:hover svg {
+nav a:hover svg {
     animation: turn45 0.3s 1 forwards;
 }
 
-nav li a:hover {
+nav  a:hover {
     border-bottom: 2px solid var(--highlight-color);
+}
+
+nav a:active { 
+    background-color: rgba(255, 0, 200, 0.6);
 }
 
 @keyframes turn45 {
@@ -97,17 +103,19 @@ nav li a:hover {
     color: transparent;
 }
 
+
+
+@keyframes background-slide {
+    from {background-position: 0px 0px;}
+    to {background-position: 0px -4000px;}
+}
+
 body {
-    background: var(--background-color);
+    background: var(--background-color) url('/assets/stars.png') repeat top center;
+    background-size: auto 1000px;
+    animation: background-slide 200s linear infinite;
     color: var(--primary-color);
-}
-main {
-    padding: 1rem;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    font-family: Arial, Helvetica, sans-serif;
-}
+  }
 
 main a {
     color: var(--link-color);
@@ -117,13 +125,22 @@ h1 {
     display: inline;
 }
 
+Button {
+    cursor: pointer;
+    background-color: rgba(255, 0, 200, 0.7);
+}
+
+#resumeButton {
+    cursor : pointer;
+}
+
 #resumeButton {
     float: right;
     display: inline-flex;
     align-items: center;
     padding : 0.2rem 0.4rem; 
     gap: 5px;
-    background-color: rgba(255,0,255, 0.7);
+    background-color: rgba(255, 0,200, 0.7);
     color: var(--primary-color);
     border-radius: 2px;
 }
@@ -132,18 +149,122 @@ h1 {
     fill: var(--primary-color);
 }
 
+main {
+    padding : 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width : 670px) {
+    #aboutParagraph {
+        width : 90vw;
+    }
+    main {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    #skills {
+        width : max(65vw, 300px);
+
+    }
+    #contact {
+        margin-top: 5vh;
+        width: 95vw;
+    }
+    form {
+        margin-top: 10vh;
+        width: 95vw;
+    }
+}
+@media (min-width : 670px) {
+    #aboutParagraph {
+        width: 50vw;
+    }
+    main {
+        flex-flow: row wrap;
+    }
+    #skills {
+        width : max(30vw, 300px);
+    }
+    #contact {
+        margin-top: 10vh;
+        width: 45vw;
+    }
+    form {
+        margin-top: 10vh;
+        width: 45vw;
+    }
+}
+
 #aboutParagraph p {
     padding: 20px 0px;
 }
 
-#aboutParagraph {
-    width: 50vw;
+
+
+#skills p {
+    display: inline;
 }
 
-#skills {
-    width : 30vw;
+#skills ul {
+    list-style : none; 
 }
 
-#contact {
-    width: 100vw;
+#skills li {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    padding: 0.4rem;
+}
+
+#skills h2 {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#skills button {
+    display: inline-flex;
+    align-items: center;
+    padding : 0.2rem 0.4rem; 
+    gap: 5px;
+    color: var(--primary-color);
+    border-radius: 2px;
+    border: none;
+}
+
+
+
+#contactList {
+    text-align: left;
+    list-style: none;
+    padding: 20px;
+}
+
+form h3 {
+    margin-bottom: 10px;
+}
+
+
+form input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 90%;
+    height: 10vh;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form button {
+    display: inline-flex;
+    align-items: center;
+    padding : 0.2rem 0.4rem; 
+    color: var(--primary-color);
+    border-radius: 2px;
+    border: none;
 }

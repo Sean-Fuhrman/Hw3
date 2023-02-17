@@ -49,7 +49,14 @@
         </header>
         <main>
             <section id="intro">
-                <img src="assets/portrait.webp" title="self portrait">
+                
+                <picture>
+                    <source srcset="/assets/High_Res_Portrait.webp" media="(min-width: 800px)" type="image/webp" />
+                    <source srcset="/assets/Mid_Res_Portrait.webp" media="(min-width: 600px)" type="image/webp" />
+                    <source srcset="/assets/low_Res_Portrait.webp" media="(min-width: 400px)" type="image/webp"/>
+                    <img src="/assets/Mid_Res_Portrait.webp" alt="Self-Portrait" />
+                </picture>
+             
                 <h1 id="hiText">
                     <em id="name">
                        Sean Fuhrman
